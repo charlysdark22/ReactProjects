@@ -29,8 +29,10 @@ import {
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCart } from '../context/CartContext';
-import { productService } from '../services/productService';
+import { realProductService } from '../services/realProductService';
 import { toast } from 'react-toastify';
+import ReviewList from '../components/reviews/ReviewList';
+import SEOHead from '../components/common/SEOHead';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -53,7 +55,7 @@ const ProductDetailPage = () => {
     try {
       setLoading(true);
       setError('');
-      const data = await productService.getProductById(id);
+      const data = await realProductService.getProductById(id);
       setProduct(data);
     } catch (error) {
       setError(error.message);
@@ -133,8 +135,24 @@ const ProductDetailPage = () => {
   }
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Grid container spacing={4}>
+    <>
+      <SEOHead
+        title={product?.name}
+        description={product?.description}
+        image={product?.mainImage || product?.images?.[0]?.url}
+        url={`/product/${id}`}
+        type="product"
+        product={product}
+        keywords={[
+          product?.brand,
+          product?.category,
+          'Cuba',
+          'tecnología',
+          ...(product?.tags || [])
+        ]}
+      />
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        <Grid container spacing={4}>
         {/* Imagen del producto */}
         <Grid item xs={12} md={6}>
           <Box sx={{ position: 'sticky', top: 100 }}>
@@ -341,20 +359,12 @@ const ProductDetailPage = () => {
           )}
 
           {selectedTab === 2 && (
-            <Card>
-              <CardContent>
-                <Typography variant="h6" gutterBottom>
-                  Reseñas de Clientes
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Las reseñas estarán disponibles próximamente.
-                </Typography>
-              </CardContent>
-            </Card>
+            <ReviewList productId={product._id} />
           )}
         </Box>
       </Box>
-    </Container>
+      </Container>
+    </>
   );
 };
 

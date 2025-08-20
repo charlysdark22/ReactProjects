@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Início",
+    "products": "Produtos",
+    "cart": "Carrinho",
+    "login": "Entrar",
+    "register": "Registrar",
+    "profile": "Perfil",
+    "admin": "Admin",
+    "logout": "Sair"
+  },
+  "hero": {
+    "title": "TechStore Cuba",
+    "subtitle": "A melhor tecnologia ao seu alcance",
+    "description": "Computadores, laptops, telefones e acessórios das melhores marcas",
+    "shopNow": "Comprar Agora"
+  },
+  "categories": {
+    "desktop": "Computadores de Mesa",
+    "laptop": "Laptops",
+    "phone": "Telefones",
+    "accessories": "Acessórios"
+  },
+  "product": {
+    "addToCart": "Adicionar ao Carrinho",
+    "buyNow": "Comprar Agora",
+    "specifications": "Especificações",
+    "description": "Descrição",
+    "price": "Preço",
+    "stock": "Em Estoque",
+    "outOfStock": "Fora de Estoque"
+  },
+  "cart": {
+    "title": "Carrinho de Compras",
+    "empty": "Seu carrinho está vazio",
+    "total": "Total",
+    "checkout": "Finalizar Compra",
+    "remove": "Remover",
+    "quantity": "Quantidade",
+    "continueShopping": "Continuar Comprando"
+  },
+  "auth": {
+    "login": "Entrar",
+    "register": "Registrar",
+    "email": "Email",
+    "password": "Senha",
+    "confirmPassword": "Confirmar Senha",
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "phone": "Telefone",
+    "address": "Endereço",
+    "forgotPassword": "Esqueceu sua senha?",
+    "noAccount": "Não tem conta?",
+    "hasAccount": "Já tem conta?"
+  },
+  "payment": {
+    "title": "Gateway de Pagamento",
+    "selectMethod": "Selecionar Método de Pagamento",
+    "transfermovil": "Transfermóvil",
+    "enzona": "Enzona",
+    "bankTransfer": "Transferência Bancária",
+    "banks": {
+      "bandec": "BANDEC",
+      "bpa": "BPA",
+      "metropolitano": "Banco Metropolitano"
+    },
+    "cardNumber": "Número do Cartão",
+    "expiryDate": "Data de Validade",
+    "cvv": "CVV",
+    "payNow": "Pagar Agora",
+    "processing": "Processando pagamento...",
+    "success": "Pagamento bem-sucedido",
+    "error": "Erro no pagamento"
+  },
+  "admin": {
+    "dashboard": "Painel Admin",
+    "products": "Gestão de Produtos",
+    "orders": "Pedidos",
+    "users": "Usuários",
+    "payments": "Pagamentos",
+    "addProduct": "Adicionar Produto",
+    "editProduct": "Editar Produto",
+    "deleteProduct": "Excluir Produto"
+  },
+  "common": {
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "yes": "Sim",
+    "no": "Não",
+    "darkMode": "Modo Escuro",
+    "language": "Idioma"
+  }
+}

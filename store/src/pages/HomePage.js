@@ -23,6 +23,7 @@ import {
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import FeaturedProducts from '../components/products/FeaturedProducts';
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -228,45 +229,7 @@ const HomePage = () => {
         </Box>
 
         {/* Productos destacados */}
-        <Box sx={{ mb: 6 }}>
-          <Typography variant="h3" component="h2" align="center" gutterBottom>
-            Productos Destacados
-          </Typography>
-          <Typography variant="body1" align="center" color="text.secondary" paragraph>
-            Los productos más populares de nuestra tienda
-          </Typography>
-          
-          <Grid container spacing={3} sx={{ mt: 2 }}>
-            {[1, 2, 3].map((item) => (
-              <Grid item xs={12} md={4} key={item}>
-                <Card>
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image={`https://via.placeholder.com/300x200?text=Producto+${item}`}
-                    alt={`Producto ${item}`}
-                  />
-                  <CardContent>
-                    <Typography variant="h6" gutterBottom>
-                      Producto Destacado {item}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Descripción del producto destacado con características principales.
-                    </Typography>
-                    <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <Typography variant="h6" color="primary">
-                        ${(Math.random() * 1000 + 100).toFixed(2)}
-                      </Typography>
-                      <Button variant="contained" size="small">
-                        Ver Detalles
-                      </Button>
-                    </Box>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+        <FeaturedProducts />
 
         {/* Call to Action */}
         <Box sx={{ mb: 6 }}>

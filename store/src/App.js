@@ -23,6 +23,7 @@ const LoginPage = React.lazy(() => import('./pages/LoginPage'));
 const RegisterPage = React.lazy(() => import('./pages/RegisterPage'));
 const ProfilePage = React.lazy(() => import('./pages/ProfilePage'));
 const AdminDashboard = React.lazy(() => import('./pages/AdminDashboard'));
+const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 
 // Internationalization
 import './locales/i18n';
@@ -74,8 +75,8 @@ function App() {
                     {/* Rutas de administrador */}
                     <Route path="/admin/*" element={<AdminDashboard />} />
                     
-                    {/* Ruta 404 - TODO: Crear página 404 */}
-                    <Route path="*" element={<div>Página no encontrada</div>} />
+                    {/* Ruta 404 */}
+                    <Route path="*" element={<NotFoundPage />} />
                   </Routes>
                 </Suspense>
               </Box>

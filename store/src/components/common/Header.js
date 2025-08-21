@@ -38,6 +38,8 @@ import {
   Login,
   PersonAdd
 } from '@mui/icons-material';
+import SearchBar from './SearchBar';
+import NotificationCenter from './NotificationCenter';
 import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context/ThemeContext';
@@ -216,6 +218,11 @@ const Header = () => {
           )}
 
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            {/* Barra de búsqueda */}
+            <Box sx={{ display: { xs: 'none', md: 'block' }, minWidth: 300, mr: 2 }}>
+              <SearchBar placeholder="Buscar productos..." />
+            </Box>
+
             {/* Selector de idioma */}
             <IconButton
               color="inherit"
@@ -233,6 +240,9 @@ const Header = () => {
             >
               {darkMode ? <Brightness7 /> : <Brightness4 />}
             </IconButton>
+
+            {/* Centro de notificaciones */}
+            <NotificationCenter />
 
             {/* Carrito */}
             <IconButton

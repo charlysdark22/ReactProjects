@@ -4,7 +4,10 @@ import { Box, CircularProgress } from '@mui/material';
 import { ToastContainer } from 'react-toastify';
 import { HelmetProvider } from 'react-helmet-async';
 import 'react-toastify/dist/ReactToastify.css';
+import './locales/i18n';
 
+// PWA Utils
+import initializePWA from './services/pwaService';
 // Context Providers
 import { CustomThemeProvider } from './context/ThemeContext';
 import { AuthProvider } from './context/AuthContext';
@@ -28,10 +31,7 @@ const ProfilePage = React.lazy(() => import('./pages/ProfilePage'));
 const AdminDashboard = React.lazy(() => import('./pages/AdminDashboard'));
 
 // Internationalization
-import './locales/i18n';
 
-// PWA Utils
-import { initializePWA } from './utils/pwaUtils';
 
 const LoadingSpinner = () => (
   <Box

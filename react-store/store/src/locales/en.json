@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "cart": "Cart",
+    "login": "Login",
+    "register": "Register",
+    "profile": "Profile",
+    "admin": "Admin",
+    "logout": "Logout"
+  },
+  "hero": {
+    "title": "TechStore Cuba",
+    "subtitle": "The best technology at your fingertips",
+    "description": "Computers, laptops, phones and accessories from the best brands",
+    "shopNow": "Shop Now"
+  },
+  "categories": {
+    "desktop": "Desktop Computers",
+    "laptop": "Laptops",
+    "phone": "Phones",
+    "accessories": "Accessories"
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "specifications": "Specifications",
+    "description": "Description",
+    "price": "Price",
+    "stock": "In Stock",
+    "outOfStock": "Out of Stock"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "quantity": "Quantity",
+    "continueShopping": "Continue Shopping"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone",
+    "address": "Address",
+    "forgotPassword": "Forgot your password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?"
+  },
+  "payment": {
+    "title": "Payment Gateway",
+    "selectMethod": "Select Payment Method",
+    "transfermovil": "Transfermóvil",
+    "enzona": "Enzona",
+    "bankTransfer": "Bank Transfer",
+    "banks": {
+      "bandec": "BANDEC",
+      "bpa": "BPA",
+      "metropolitano": "Banco Metropolitano"
+    },
+    "cardNumber": "Card Number",
+    "expiryDate": "Expiry Date",
+    "cvv": "CVV",
+    "payNow": "Pay Now",
+    "processing": "Processing payment...",
+    "success": "Payment successful",
+    "error": "Payment error"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "products": "Product Management",
+    "orders": "Orders",
+    "users": "Users",
+    "payments": "Payments",
+    "addProduct": "Add Product",
+    "editProduct": "Edit Product",
+    "deleteProduct": "Delete Product"
+  },
+  "common": {
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "yes": "Yes",
+    "no": "No",
+    "darkMode": "Dark Mode",
+    "language": "Language"
+  }
+}

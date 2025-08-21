@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private pages
+Disallow: /admin/
+Disallow: /profile/
+Disallow: /checkout/
+Disallow: /cart/
+
+# Disallow search result pages to prevent duplicate content
+Disallow: /products?*
+
+# Allow important pages
+Allow: /products/
+Allow: /product/
+
+# Sitemap location
+Sitemap: https://techstore.cu/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

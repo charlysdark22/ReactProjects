@@ -1,4 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import {
+  Person,
+  Edit,
+  Save,
+  Cancel,
+  ShoppingBag,
+  Receipt
+} from '@mui/icons-material';
 import {
   Container,
   Grid,
@@ -22,18 +29,12 @@ import {
   TableRow,
   CircularProgress
 } from '@mui/material';
-import {
-  Person,
-  Edit,
-  Save,
-  Cancel,
-  ShoppingBag,
-  Receipt
-} from '@mui/icons-material';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { toast } from 'react-toastify';
+
 import { useAuth } from '../context/AuthContext';
 import { paymentService } from '../services/paymentService';
-import { toast } from 'react-toastify';
 
 const ProfilePage = () => {
   const { t } = useTranslation();
@@ -51,13 +52,7 @@ const ProfilePage = () => {
     address: user?.address || ''
   });
 
-  useEffect(() => {
-    if (user) {
-      loadUserOrders();
-    }
-  }, [user]);
-
-  const loadUserOrders = async () => {
+  const loadUserOrders = useCallback(async () => {
     try {
       setLoading(true);
       const orders = await paymentService.getOrderHistory(user.id);
@@ -67,7 +62,13 @@ const ProfilePage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [user?.id]);
+
+  useEffect(() => {
+    if (user) {
+      loadUserOrders();
+    }
+  }, [user, loadUserOrders]);
 
   const handleSaveProfile = async () => {
     try {

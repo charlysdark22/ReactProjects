@@ -1,4 +1,9 @@
-import React from 'react';
+import {
+  ShoppingCart,
+  Visibility,
+  Favorite,
+  FavoriteBorder
+} from '@mui/icons-material';
 import {
   Card,
   CardMedia,
@@ -11,16 +16,12 @@ import {
   IconButton,
   Tooltip
 } from '@mui/material';
-import {
-  ShoppingCart,
-  Visibility,
-  Favorite,
-  FavoriteBorder
-} from '@mui/icons-material';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useCart } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
+import { useCart } from '../../context/CartContext';
 
 const ProductCard = ({ product }) => {
   const { t } = useTranslation();

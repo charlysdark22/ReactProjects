@@ -1,4 +1,13 @@
-import React from 'react';
+import {
+  Computer,
+  Laptop,
+  Phone,
+  Extension,
+  LocalShipping,
+  Security,
+  SupportAgent,
+  Payment
+} from '@mui/icons-material';
 import {
   Box,
   Container,
@@ -11,18 +20,10 @@ import {
   Paper,
   useTheme
 } from '@mui/material';
-import {
-  Computer,
-  Laptop,
-  Phone,
-  Extension,
-  LocalShipping,
-  Security,
-  SupportAgent,
-  Payment
-} from '@mui/icons-material';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+
 import FeaturedProducts from '../components/products/FeaturedProducts';
 
 const HomePage = () => {

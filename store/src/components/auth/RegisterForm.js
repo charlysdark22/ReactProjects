@@ -1,4 +1,13 @@
-import React, { useState } from 'react';
+import { yupResolver } from '@hookform/resolvers/yup';
+import {
+  Visibility,
+  VisibilityOff,
+  Email,
+  Lock,
+  Person,
+  Phone,
+  LocationOn
+} from '@mui/icons-material';
 import {
   Box,
   Paper,
@@ -12,22 +21,15 @@ import {
   IconButton,
   Grid
 } from '@mui/material';
-import {
-  Visibility,
-  VisibilityOff,
-  Email,
-  Lock,
-  Person,
-  Phone,
-  LocationOn
-} from '@mui/icons-material';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
 import { useTranslation } from 'react-i18next';
-import { useAuth } from '../../context/AuthContext';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import * as yup from 'yup';
+
+import { useAuth } from '../../context/AuthContext';
+
 
 const schema = yup.object().shape({
   firstName: yup

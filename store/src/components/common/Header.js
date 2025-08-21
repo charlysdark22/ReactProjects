@@ -1,27 +1,3 @@
-import React, { useState } from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton,
-  Badge,
-  Menu,
-  MenuItem,
-  Box,
-  Switch,
-  FormControlLabel,
-  Select,
-  FormControl,
-  InputLabel,
-  Drawer,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  useMediaQuery,
-  useTheme as useMuiTheme
-} from '@mui/material';
 import {
   ShoppingCart,
   AccountCircle,
@@ -38,13 +14,34 @@ import {
   Login,
   PersonAdd
 } from '@mui/icons-material';
-import SearchBar from './SearchBar';
-import NotificationCenter from './NotificationCenter';
-import { useNavigate, Link } from 'react-router-dom';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Badge,
+  Menu,
+  MenuItem,
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  useMediaQuery,
+  useTheme as useMuiTheme
+} from '@mui/material';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useTheme } from '../../context/ThemeContext';
+import { useNavigate, Link } from 'react-router-dom';
+
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
+import { useTheme } from '../../context/ThemeContext';
+
+import NotificationCenter from './NotificationCenter';
+import SearchBar from './SearchBar';
 
 const Header = () => {
   const navigate = useNavigate();

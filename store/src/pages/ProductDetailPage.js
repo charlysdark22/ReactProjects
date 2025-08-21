@@ -1,4 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import {
+  ShoppingCart,
+  Favorite,
+  FavoriteBorder,
+  Share,
+  Add,
+  Remove
+} from '@mui/icons-material';
 import {
   Container,
   Grid,
@@ -18,19 +25,14 @@ import {
   Tabs,
   Tab
 } from '@mui/material';
-import {
-  ShoppingCart,
-  Favorite,
-  FavoriteBorder,
-  Share,
-  Add,
-  Remove
-} from '@mui/icons-material';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 import { useCart } from '../context/CartContext';
 import { productService } from '../services/productService';
-import { toast } from 'react-toastify';
+
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -45,11 +47,7 @@ const ProductDetailPage = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  useEffect(() => {
-    loadProduct();
-  }, [id]);
-
-  const loadProduct = async () => {
+  const loadProduct = useCallback(async () => {
     try {
       setLoading(true);
       setError('');
@@ -60,7 +58,11 @@ const ProductDetailPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    loadProduct();
+  }, [loadProduct]);
 
   const handleAddToCart = () => {
     if (product && quantity > 0) {

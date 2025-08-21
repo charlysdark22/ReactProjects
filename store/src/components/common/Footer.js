@@ -1,13 +1,3 @@
-import React from 'react';
-import {
-  Box,
-  Container,
-  Grid,
-  Typography,
-  Link,
-  IconButton,
-  Divider
-} from '@mui/material';
 import {
   Facebook,
   Twitter,
@@ -17,6 +7,16 @@ import {
   Email,
   LocationOn
 } from '@mui/icons-material';
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+  Link,
+  IconButton,
+  Divider
+} from '@mui/material';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {

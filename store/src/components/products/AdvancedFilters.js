@@ -1,4 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import {
+  ExpandMore,
+  FilterList,
+  Clear,
+  PriceCheck
+} from '@mui/icons-material';
 import {
   Box,
   Accordion,
@@ -15,12 +20,7 @@ import {
   Divider,
   useTheme
 } from '@mui/material';
-import {
-  ExpandMore,
-  FilterList,
-  Clear,
-  PriceCheck
-} from '@mui/icons-material';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const AdvancedFilters = ({ 

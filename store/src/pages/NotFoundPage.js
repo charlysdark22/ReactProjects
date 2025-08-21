@@ -1,4 +1,9 @@
-import React from 'react';
+import {
+  Home,
+  Search,
+  ShoppingCart,
+  ArrowBack
+} from '@mui/icons-material';
 import {
   Box,
   Container,
@@ -7,14 +12,9 @@ import {
   Paper,
   useTheme
 } from '@mui/material';
-import {
-  Home,
-  Search,
-  ShoppingCart,
-  ArrowBack
-} from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const NotFoundPage = () => {
   const { t } = useTranslation();

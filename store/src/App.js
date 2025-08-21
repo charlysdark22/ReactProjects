@@ -1,17 +1,20 @@
+import { Box, CircularProgress } from '@mui/material';
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Box, CircularProgress } from '@mui/material';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Context Providers
-import { CustomThemeProvider } from './context/ThemeContext';
+import Footer from './components/common/Footer';
+import Header from './components/common/Header';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import { CustomThemeProvider } from './context/ThemeContext';
 
 // Components
-import Header from './components/common/Header';
-import Footer from './components/common/Footer';
+
+// Internationalization
+import './locales/i18n';
 
 // Pages - Lazy loading para mejor rendimiento
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -24,9 +27,6 @@ const RegisterPage = React.lazy(() => import('./pages/RegisterPage'));
 const ProfilePage = React.lazy(() => import('./pages/ProfilePage'));
 const AdminDashboard = React.lazy(() => import('./pages/AdminDashboard'));
 const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
-
-// Internationalization
-import './locales/i18n';
 
 const LoadingSpinner = () => (
   <Box

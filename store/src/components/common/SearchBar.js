@@ -1,4 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import {
+  Search,
+  Clear,
+  TrendingUp
+} from '@mui/icons-material';
 import {
   Box,
   TextField,
@@ -14,13 +18,10 @@ import {
   Typography,
   useTheme
 } from '@mui/material';
-import {
-  Search,
-  Clear,
-  TrendingUp
-} from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+
 import { productService } from '../../services/productService';
 
 const SearchBar = ({ onSearch, placeholder, fullWidth = false, showSuggestions = true }) => {
@@ -47,15 +48,7 @@ const SearchBar = ({ onSearch, placeholder, fullWidth = false, showSuggestions =
     ]);
   }, []);
 
-  useEffect(() => {
-    if (searchQuery.length >= 2) {
-      generateSuggestions();
-    } else {
-      setSuggestions([]);
-    }
-  }, [searchQuery]);
-
-  const generateSuggestions = async () => {
+  const generateSuggestions = useCallback(async () => {
     try {
       const allProducts = await productService.getAllProducts();
       const filtered = allProducts.filter(product =>
@@ -68,7 +61,15 @@ const SearchBar = ({ onSearch, placeholder, fullWidth = false, showSuggestions =
     } catch (error) {
       console.error('Error generating suggestions:', error);
     }
-  };
+  }, [searchQuery]);
+
+  useEffect(() => {
+    if (searchQuery.length >= 2) {
+      generateSuggestions();
+    } else {
+      setSuggestions([]);
+    }
+  }, [searchQuery, generateSuggestions]);
 
   const handleSearch = (query = searchQuery) => {
     if (!query.trim()) return;

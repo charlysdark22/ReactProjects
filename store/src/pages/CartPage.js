@@ -1,4 +1,10 @@
-import React from 'react';
+import {
+  Delete,
+  Add,
+  Remove,
+  ShoppingCartCheckout,
+  ShoppingBag
+} from '@mui/icons-material';
 import {
   Container,
   Typography,
@@ -14,18 +20,13 @@ import {
   CardContent,
   Alert
 } from '@mui/material';
-import {
-  Delete,
-  Add,
-  Remove,
-  ShoppingCartCheckout,
-  ShoppingBag
-} from '@mui/icons-material';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useCart } from '../context/CartContext';
-import { useAuth } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
+import { useAuth } from '../context/AuthContext';
+import { useCart } from '../context/CartContext';
 
 const CartPage = () => {
   const { t } = useTranslation();

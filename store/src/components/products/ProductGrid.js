@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { Search, FilterList } from '@mui/icons-material';
 import {
   Box,
   Grid,
@@ -13,10 +13,12 @@ import {
   CircularProgress,
   Alert
 } from '@mui/material';
-import { Search, FilterList } from '@mui/icons-material';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import ProductCard from './ProductCard';
+
 import { productService } from '../../services/productService';
+
+import ProductCard from './ProductCard';
 
 const ProductGrid = ({ category, searchQuery }) => {
   const { t } = useTranslation();
@@ -28,21 +30,7 @@ const ProductGrid = ({ category, searchQuery }) => {
   const [sortBy, setSortBy] = useState('name');
   const [filterBy, setFilterBy] = useState('all');
 
-  useEffect(() => {
-    loadProducts();
-  }, [category]);
-
-  useEffect(() => {
-    if (searchQuery !== undefined) {
-      setLocalSearchQuery(searchQuery);
-    }
-  }, [searchQuery]);
-
-  useEffect(() => {
-    filterAndSortProducts();
-  }, [products, localSearchQuery, sortBy, filterBy]);
-
-  const loadProducts = async () => {
+  const loadProducts = useCallback(async () => {
     try {
       setLoading(true);
       setError('');
@@ -60,9 +48,9 @@ const ProductGrid = ({ category, searchQuery }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [category]);
 
-  const filterAndSortProducts = () => {
+  const filterAndSortProducts = useCallback(() => {
     let filtered = [...products];
 
     // Filtrar por búsqueda
@@ -100,7 +88,21 @@ const ProductGrid = ({ category, searchQuery }) => {
     });
 
     setFilteredProducts(filtered);
-  };
+  }, [products, localSearchQuery, sortBy, filterBy]);
+
+  useEffect(() => {
+    loadProducts();
+  }, [loadProducts]);
+
+  useEffect(() => {
+    if (searchQuery !== undefined) {
+      setLocalSearchQuery(searchQuery);
+    }
+  }, [searchQuery]);
+
+  useEffect(() => {
+    filterAndSortProducts();
+  }, [filterAndSortProducts]);
 
   const getBrands = () => {
     const brands = [...new Set(products.map(p => p.brand))];

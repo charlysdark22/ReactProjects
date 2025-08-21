@@ -1,4 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import {
+  Notifications,
+  LocalOffer,
+  Payment,
+  LocalShipping,
+  CheckCircle,
+  Info
+} from '@mui/icons-material';
 import {
   Box,
   IconButton,
@@ -15,16 +22,7 @@ import {
   Divider,
   useTheme
 } from '@mui/material';
-import {
-  Notifications,
-  ShoppingCart,
-  LocalOffer,
-  Payment,
-  LocalShipping,
-  CheckCircle,
-  Error,
-  Info
-} from '@mui/icons-material';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -37,6 +35,19 @@ const NotificationCenter = () => {
   const [unreadCount, setUnreadCount] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
 
+  const checkForNewNotifications = useCallback(() => {
+    // Simular nuevas notificaciones
+    const random = Math.random();
+    if (random < 0.1) { // 10% de probabilidad
+      addNotification({
+        type: 'promo',
+        title: 'Nueva Oferta',
+        message: 'Descuentos especiales en accesorios gaming',
+        icon: <LocalOffer color="warning" />
+      });
+    }
+  }, []);
+
   useEffect(() => {
     loadNotifications();
     // Simular notificaciones en tiempo real
@@ -45,7 +56,7 @@ const NotificationCenter = () => {
     }, 30000); // Verificar cada 30 segundos
 
     return () => clearInterval(interval);
-  }, []);
+  }, [checkForNewNotifications]);
 
   const loadNotifications = () => {
     const saved = localStorage.getItem('notifications');
@@ -88,19 +99,6 @@ const NotificationCenter = () => {
       setNotifications(initialNotifications);
       setUnreadCount(2);
       localStorage.setItem('notifications', JSON.stringify(initialNotifications));
-    }
-  };
-
-  const checkForNewNotifications = () => {
-    // Simular nuevas notificaciones
-    const random = Math.random();
-    if (random < 0.1) { // 10% de probabilidad
-      addNotification({
-        type: 'promo',
-        title: 'Nueva Oferta',
-        message: 'Descuentos especiales en accesorios gaming',
-        icon: <LocalOffer color="warning" />
-      });
     }
   };
 

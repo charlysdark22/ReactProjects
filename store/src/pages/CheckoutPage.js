@@ -1,4 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import {
+  ShoppingCart,
+  Payment,
+  CheckCircle,
+  CreditCard,
+  AccountBalance,
+  Phone
+} from '@mui/icons-material';
 import {
   Container,
   Stepper,
@@ -23,20 +30,15 @@ import {
   CardContent,
   Divider
 } from '@mui/material';
-import {
-  ShoppingCart,
-  Payment,
-  CheckCircle,
-  CreditCard,
-  AccountBalance,
-  Phone
-} from '@mui/icons-material';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useCart } from '../context/CartContext';
-import { useAuth } from '../context/AuthContext';
-import { paymentService } from '../services/paymentService';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
+import { useAuth } from '../context/AuthContext';
+import { useCart } from '../context/CartContext';
+import { paymentService } from '../services/paymentService';
+
 
 const CheckoutPage = () => {
   const { t } = useTranslation();

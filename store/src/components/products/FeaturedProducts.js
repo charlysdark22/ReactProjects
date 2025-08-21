@@ -1,4 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import {
+  ChevronLeft,
+  ChevronRight,
+  Star,
+  ShoppingCart,
+  Favorite,
+  FavoriteBorder
+} from '@mui/icons-material';
 import {
   Box,
   Typography,
@@ -12,16 +19,10 @@ import {
   useTheme,
   useMediaQuery
 } from '@mui/material';
-import {
-  ChevronLeft,
-  ChevronRight,
-  Star,
-  ShoppingCart,
-  Favorite,
-  FavoriteBorder
-} from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+
 import { useCart } from '../../context/CartContext';
 import { productService } from '../../services/productService';
 

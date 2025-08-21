@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "TechStore",
+  "name": "TechStore Cuba - Tienda Online",
+  "description": "La mejor tecnología al alcance de tus manos",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,50 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#1976d2",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "categories": ["shopping", "technology", "business"],
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshot2.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Productos",
+      "short_name": "Productos",
+      "description": "Ver todos los productos",
+      "url": "/products",
+      "icons": [
+        {
+          "src": "favicon.ico",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Carrito",
+      "short_name": "Carrito",
+      "description": "Ver carrito de compras",
+      "url": "/cart",
+      "icons": [
+        {
+          "src": "favicon.ico",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
 }

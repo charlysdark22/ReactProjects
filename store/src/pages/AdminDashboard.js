@@ -1,4 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import {
+  Dashboard,
+  Inventory,
+  ShoppingCart,
+  People,
+  Payment,
+  Add,
+  Edit,
+  Delete,
+  Visibility,
+  TrendingUp,
+  AttachMoney,
+  ShoppingBag
+} from '@mui/icons-material';
 import {
   Container,
   Grid,
@@ -30,26 +43,14 @@ import {
   Tab,
   CircularProgress
 } from '@mui/material';
-import {
-  Dashboard,
-  Inventory,
-  ShoppingCart,
-  People,
-  Payment,
-  Add,
-  Edit,
-  Delete,
-  Visibility,
-  TrendingUp,
-  AttachMoney,
-  ShoppingBag
-} from '@mui/icons-material';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAuth } from '../context/AuthContext';
-import { productService } from '../services/productService';
-import { paymentService } from '../services/paymentService';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
+import { useAuth } from '../context/AuthContext';
+import { paymentService } from '../services/paymentService';
+import { productService } from '../services/productService';
 
 const AdminDashboard = () => {
   const { t } = useTranslation();

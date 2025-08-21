@@ -1,8 +1,9 @@
-import React from 'react';
 import { Container, Grid, Box, useTheme, useMediaQuery } from '@mui/material';
+import React from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import ProductGrid from '../components/products/ProductGrid';
+
 import AdvancedFilters from '../components/products/AdvancedFilters';
+import ProductGrid from '../components/products/ProductGrid';
 
 const ProductsPage = () => {
   const { category } = useParams();
